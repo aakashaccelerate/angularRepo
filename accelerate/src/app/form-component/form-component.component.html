@@ -1,0 +1,87 @@
+<div class="container-fluid">
+  <div class="row">
+  <div class="col-xs-12 col-sm-12 col-md-6">
+    <div class="card">
+    <h1 class="card-header">Project Registration Form</h1>
+    <form [formGroup]="projectRegisterForm" (ngSubmit)="submitted=true">
+      <div class="form-group">
+        <label>Project Name</label>
+        <input type="text" class="form-control" formControlName="projectName" placeholder="Project name">
+        <p *ngIf="projectRegisterForm.controls.projectName.errors && projectRegisterForm.controls.projectName.dirty" class="alert alert-danger">This field is required!</p>
+      </div>
+      <div class="form-group">
+        <label>Project Code</label>
+        <input type="text" class="form-control" formControlName="projectCode" placeholder="Project Code">
+        <p *ngIf="projectRegisterForm.controls.projectCode.errors && projectRegisterForm.controls.projectCode.dirty" class="alert alert-danger">This field is required!</p>
+      </div>
+      <div class="form-group">
+        <label>Project Type</label>
+            <select id="inputState" class="form-control" formControlName="projectType">
+              <option>Development</option>
+              <option>Maintainance</option>
+              <option>Support</option>
+            </select>
+        <p *ngIf="projectRegisterForm.controls.projectType.errors && projectRegisterForm.controls.projectType.dirty" class="alert alert-danger">This field is required!</p>
+      </div>
+      <div class="form-group">
+        <label>Project RunMode</label>
+        <select id="inputState" class="form-control" formControlName="projectRunMode">
+            <option>Agile</option>
+            <option>Waterfall</option>
+          </select>
+        <p *ngIf="projectRegisterForm.controls.projectRunMode.errors && projectRegisterForm.controls.projectRunMode.dirty" class="alert alert-danger">This field is required!</p>
+      </div>
+      <div class="form-group">
+        <label>Portfolio Anchor</label>
+        <input type="text" class="form-control" formControlName="portfolioAnchor" placeholder="Portfolio Anchor">
+        <p *ngIf="projectRegisterForm.controls.portfolioAnchor.errors && projectRegisterForm.controls.portfolioAnchor.dirty" class="alert alert-danger">This field is required!</p>
+      </div>
+      <button class="btn btn-primary" type="submit">Submit</button>
+    </form>
+    </div>
+  <br/>
+  </div>
+
+
+
+
+
+  <div class="col-xs-12 col-sm-12 col-md-6 card">
+    <h1>Tech Registration Form</h1>
+    <form [formGroup]="techRegisterForm" (ngSubmit)="submitted=true">
+      <div class="form-group">
+        <label>ALM Tool</label>
+        <input type="text" class="form-control" formControlName="almTool" placeholder="ALM Tool">
+        <p *ngIf="techRegisterForm.controls.almTool.errors && techRegisterForm.controls.almTool.dirty" class="alert alert-danger">This field is required!</p>
+      </div>
+      <div class="form-group">
+        <label>Unit Test Framework</label>
+        <input type="text" class="form-control" formControlName="unitTestFramework" placeholder="Unit Test Framework">
+        <p *ngIf="techRegisterForm.controls.unitTestFramework.errors && techRegisterForm.controls.unitTestFramework.dirty" class="alert alert-danger">This field is required!</p>
+      </div>
+      <div class="form-group">
+        <label>Code Profiling Tool</label>
+        <input type="text" class="form-control" formControlName="codeProfilingTool" placeholder="Code Profiliong Tool">
+        <p *ngIf="techRegisterForm.controls.codeProfilingTool.errors && techRegisterForm.controls.codeProfilingTool.dirty" class="alert alert-danger">This field is required!</p>
+      </div>
+      <div class="form-group">
+        <label>Regression Automation</label>
+        <input type="text" class="form-control" formControlName="regressionAutomation" placeholder="Regression Automation">
+        <p *ngIf="techRegisterForm.controls.regressionAutomation.errors && techRegisterForm.controls.regressionAutomation.dirty" class="alert alert-danger">This field is required!</p>
+      </div>
+      <div class="form-group">
+        <label>Deployment</label>
+        <input type="text" class="form-control" formControlName="deployment" placeholder="Deployment">
+        <p *ngIf="techRegisterForm.controls.deployment.errors && techRegisterForm.controls.deployment.dirty" class="alert alert-danger">This field is required!</p>
+      </div>
+      <div class="form-group">
+        <label>Application Health Check and Monitoring</label>
+        <input type="text" class="form-control" formControlName="applicationHealthCheck" placeholder="Application Health Check and Monitoring">
+        <p *ngIf="techRegisterForm.controls.applicationHealthCheck.errors && techRegisterForm.controls.applicationHealthCheck.dirty" class="alert alert-danger">This field is required!</p>
+      </div>
+      <button class="btn btn-primary" type="submit">Submit</button>
+    </form>
+  <br/>
+  </div>
+  </div>
+  </div>

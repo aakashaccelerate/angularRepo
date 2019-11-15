@@ -1,55 +1,67 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>Bootstrap Example</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-</head>
-<body>
-
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+      <!-- <a [routerLink]='["/"]'> -->
+        <div class="navbar-brand img-with-text" [routerLink]='["/"]'>
+            <img src="assets/logo.png" alt="logo" style="width:110px;height: 40px;">
+           <h6>Navigate Your Next!</h6>
+           </div>
+           <!-- </a> -->
+         
+    <!-- </div> -->
+    
+    <button type="button" class="navbar-toggle navbar-right" data-toggle="collapse" data-target="#myNavbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <img class="navbar-brand" src="assets/logo.png" alt="logo">
-     <h6>Navigate Your Next!</h6>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home</a></li>
-        <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1 <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Page 1-1</a></li>
-            <li><a href="#">Page 1-2</a></li>
-            <li><a href="#">Page 1-3</a></li>
-          </ul>
-        </li>
-        <li><a href="#">Page 2</a></li>
-        <li><a href="#">Page 3</a></li>
+        <li><a [routerLink]='["form"]'>Tech Modernization Survey </a></li>
+        <li><a href="#" data-toggle="dropdown">
+                Current Tech Stack <span class="caret"></span>
+            </a>
+        <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+              <li><a href="#">menu 1-1</a></li>
+              <li><a href="#">menu 1-2</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-submenu">
+                <a tabindex="-1" href="#">menu 1-3</a>
+                <ul class="dropdown-menu multi-level">
+                  <li><a tabindex="-1" href="#">Second level</a></li>
+                  <li class="dropdown-submenu">
+                    <a href="#">Even More..</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">3rd level</a></li>
+                      <li><a href="#">3rd level</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="#">Second level</a></li>
+                  <li><a href="#">Second level</a></li>
+                </ul>
+              </li>
+            </ul>
+      </li>
+        <li><a href="#">Menu 2</a></li>
+        <li><a href="#">Menu 3</a></li>
       </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      
+      <ul class="nav navbar-nav navbar-right navbar-brand">
+        <li><a [routerLink]='["/register"]'><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a [routerLink]='["/login"]'><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
       </ul>
     </div>
   </div>
 </nav>
-  
-<div class="container">
-  <h3>Collapsible Navbar</h3>
-  <p>In this example, the navigation bar is hidden on small screens and replaced by a button in the top right corner (try to re-size this window).
-  <p>Only when the button is clicked, the navigation bar will be displayed.</p>
-</div>
-<div class="footer">
-    <p>Infosys Limited</p>
-  </div>
-</body>
-</html>
+<router-outlet></router-outlet>
+<!-- <app-form-component></app-form-component> -->
+
+<footer class="footer page-footer text-white bg-primary">
+  <div class="footer-copyright text-center py-1">
+    Infosys Limited
+    </div>
+<footer>
+
+
+
